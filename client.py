@@ -10,9 +10,9 @@ s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST, PORT))
 
 for i in range(0,10):
-    s.sendall(b'Hello, world -> '+str(i)+"   "+sys.argv)
+    s.sendall(b'Hello, world -> '+str(i)+"   "+sys.argv[1])
     data = s.recv(1024)
     print('Received', repr(data))
 
 
-    sleep(10) # Time in seconds
+    sleep(1) # Time in seconds
