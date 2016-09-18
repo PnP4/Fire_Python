@@ -4,6 +4,11 @@
 import base64
 import time
 from SimpleCV import Camera
+import json
+
+data=json.loads('{"value":104,"time":1516165}')
+
+
 def checkistempincreased(temp):
     if(temp>100):
         return True;
@@ -12,16 +17,15 @@ def checkistempincreased(temp):
 def get_image():
     cam = Camera()
     img = cam.getImage()
-    img.save("filename.png")
+    img.save("fireimg.png")
 
     time.sleep(1)
-    encoded = base64.b64encode(open("filename.png", "rb").read())
+    encoded = base64.b64encode(open("fireimg.png", "rb").read())
     return encoded
 
 
+if(checkistempincreased(data["value"])):
+    encimg=get_image()
+    data["img"]=encimg
+    print json.dumps(data)
 
-
-for i in range(0,10):
-    image_64_decode = base64.decodestring(get_image())
-    image_result = open('deer_decode'+str(i)+'.png', 'wb') # create a writable image and write the decoding result
-    image_result.write(image_64_decode)

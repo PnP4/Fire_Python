@@ -20,5 +20,5 @@ while True:
     data["value"]=value
     data["time"] = time.time()
     json.dumps(data)
-    
+
 
