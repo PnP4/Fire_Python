@@ -1,6 +1,7 @@
 #sudo apt-get install ipython python-opencv python-scipy python-numpy python-pygame python-setuptools python-pip
 #sudo pip install https://github.com/sightmachine/SimpleCV/zipball/develop
 #sudo pip install svgwrite
+
 import base64
 import time
 from SimpleCV import Camera
