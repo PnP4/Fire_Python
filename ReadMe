@@ -1,0 +1,26 @@
+Fire python
+
+In tis project there are 3 comonents to be used
+Fire sensor.py
+Fire camera.py
+Fire check.py
+
+Fire sensor
+This is a program which runs on PCDuino / RaspberryPi 
+In this ,module it continuesly get the heat sesnors data.
+Sensor must be connected to A0 port of the PcDuino
+
+Fir camera
+SimpleCv is pre-required for run this module
+This will get the sensors data and check for the value of the sensor. If it is higher than predefine values
+then it turn on the camera and grab the picture. After grab the picture it turn into base64 encoding and send next component.
+
+Fire check
+Depends on numpy and cv2
+
+When the image is received it decode it and check weather the fire exsists in the image.
+if detected then data is passed to network
+
+
+That passed data must be captuured by the Firecheck android device. It will show the notifications.
+https://github.com/PnP4/FireAlarm_Android
