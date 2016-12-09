@@ -24,9 +24,9 @@ def get_image():
     encoded = base64.b64encode(open("fireimg.png", "rb").read())
     return encoded
 
-
-if(checkistempincreased(data["value"])):
-    encimg=get_image()
-    data["img"]=encimg
-    print json.dumps(data)
-
+while 1:
+    if(checkistempincreased(data["value"])):
+        encimg=get_image()
+        data["img"]=encimg
+        print json.dumps(data)
+    time.sleep(1)
