@@ -1,16 +1,30 @@
 Fire python
 
-In tis project there are 3 comonents to be used
+In this project there are 3 components to be used
 Fire sensor.py
 Fire camera.py
 Fire check.py
+
+
+Scenario is:-
+	At home we need to establish a fire sensor.
+	So we can use a heat sensor with sensor.py program to get the data from the sensor.
+	It will send the data which get from the sesnor.
+	But the thing is that sensor may be send high values even there is no fire. (example just heat from the kettle)
+	So the best thing is to avoid false alarm
+		As soon as fire sesnsor send high value
+		Take an image from the room camera (camera.py)
+		And alayze it and see is there any flames (check.py)
+	And then if both sesnor and camera confirms the fire then send alert to the user is good solution.
+	
+More details about the provided components
 
 Fire sensor
 This is a program which runs on PCDuino / RaspberryPi 
 In this ,module it continuesly get the heat sesnors data.
 Sensor must be connected to A0 port of the PcDuino
 
-Fir camera
+Fire camera
 SimpleCv is pre-required for run this module
 This will get the sensors data and check for the value of the sensor. If it is higher than predefine values
 then it turn on the camera and grab the picture. After grab the picture it turn into base64 encoding and send next component.
